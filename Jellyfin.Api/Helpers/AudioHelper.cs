@@ -153,7 +153,7 @@ namespace Jellyfin.Api.Helpers
             var isTranscodeCached = outputPathExists && transcodingJob != null;
 
             StreamingHelpers.AddDlnaHeaders(state, _httpContextAccessor.HttpContext.Response.Headers, streamingRequest.Static || isTranscodeCached, streamingRequest.StartTimeTicks, _httpContextAccessor.HttpContext.Request, _dlnaManager);
-
+/*
             // Static stream
             if (streamingRequest.Static)
             {
@@ -171,7 +171,7 @@ namespace Jellyfin.Api.Helpers
                     isHeadRequest,
                     _httpContextAccessor.HttpContext);
             }
-
+*/
             // Need to start ffmpeg (because media can't be returned directly)
             var encodingOptions = _serverConfigurationManager.GetEncodingOptions();
             var ffmpegCommandLineArguments = _encodingHelper.GetProgressiveAudioFullCommandLine(state, encodingOptions, outputPath);
